@@ -15,5 +15,5 @@ def recursive_binary_search(list, target):
                 return recursive_binary_search(list[:midpoint], target)
 
 numbers = [3,34, 56, 67, 68] #the values have to be sorted
-x = recursive_binary_search(numbers, 68)
+x = recursive_binary_search(numbers, 34)
 print(x)
