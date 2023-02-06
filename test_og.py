@@ -5,7 +5,7 @@ class TestOg(unittest.TestCase):
     def test_addition(self):
         #Test whether the additon is correct 
         self.assertAlmostEqual(add_integer(0, 1), 1)
-        self.assertAlmostEqual(add_integer(1, 0), 8)
+        self.assertAlmostEqual(add_integer(1, 0), 1)
         self.assertAlmostEqual(add_integer(-2, -2), -4)
 
     def test_values(self):

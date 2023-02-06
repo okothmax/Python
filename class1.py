@@ -16,7 +16,7 @@ class Animal:
     
     @age.setter
     def age(self, value):
-        self__age = value
+        self.__age = value
 
     @property
     def color(self):
@@ -40,9 +40,10 @@ class Animal:
     
     # creating a string  representation
     def __repr__(self):
-        return f'Animal({self.age}, "{self.color}")'
+        return f'{self.__class__.__name__}({self.age}, "{self.color}")'
     
-  
+    def __str__(self):
+        return f"A {self.color} {self.__class__.__name__}"
 
 class Domestic(Animal):
     def __init__(self, age: int, color: str, domestic: bool):
@@ -56,7 +57,7 @@ class Domestic(Animal):
         return f'Domestic({self.age}, "{self.color}", {self.__domestic})'
     
     def sendEmail(self):
-        connectToServer()
+        self.__connectToServer()
 
         return "send email"
 
@@ -74,8 +75,21 @@ class meatEater(Domestic):
         #creating a private attribute 
         self.__Eating = Eating
 
+    @property
+    def Eating(self):
+        return self.__Eating
+
 #creating an instance of meatEater
 cockroarch = meatEater(4, "red", True, False)
 
 #accessing the class variable under the class variable 
 print(meatEater.no_of_instances)
+print(cockroarch)
+dog = Animal(6, "brown")
+print(dog)
+cat = Domestic(3, 'green', True)
+crow = meatEater(7, 'blue', False, True)
+print(crow.Eating)
+#print(dog.connectToServer())
+
+print(Animal.greaterAge(2,45))
