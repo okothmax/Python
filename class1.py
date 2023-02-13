@@ -4,10 +4,10 @@ class Animal:
     no_of_instances = 0
     animals = []
 
-    def __init__(self, age: int, color: str):
+    def __init__(self, age = 1, color = 'green'):
         self.__age = age 
         self.__color = color
-        type(self).no_of_instances +=1       #Animal
+        Animal.no_of_instances +=1       #Animal
         type(self).animals.append(self)
 
     @property
@@ -46,8 +46,8 @@ class Animal:
         return f"A {self.color} {self.__class__.__name__}"
 
 class Domestic(Animal):
-    def __init__(self, age: int, color: str, domestic: bool):
-        super(). __init__(
+    def __init__(self, age, color, domestic = True):
+        super().__init__(
             age, color
         )
         self.__domestic = domestic
@@ -87,7 +87,6 @@ print(meatEater.no_of_instances)
 print(cockroarch)
 dog = Animal(6, "brown")
 print(dog)
-cat = Domestic(3, 'green', True)
 crow = meatEater(7, 'blue', False, True)
 print(crow.Eating)
 #print(dog.connectToServer())
