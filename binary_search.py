@@ -13,5 +13,5 @@ def binary_search(list, target):
     return None
 
 numbers = [3,34, 56, 67, 68] #the vales have to be sorted
-x = binary_search(numbers, 6)
+x = binary_search(numbers, 68)
 print(x)
